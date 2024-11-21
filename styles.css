@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body:before {
+  content: "";
+  background-image: url("./images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  right: 70px;
+  background-size: 270px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  background-image: url("./images/bg-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.toggle-container {
+  margin: 5px 15px;
+  position: relative;
+  width: 35px;
+  height: 18px;
+}
+
+/* Hidden checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Toggle label (the visible part of the button) */
+.toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(237, 63%, 64%);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Circle inside the toggle button */
+.toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* When checkbox is checked, change background color and move the circle */
+.toggle-checkbox:checked + .toggle-label {
+  background: hsl(236, 72%, 79%);
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+  transform: translateX(15px);
+}
+
+.container {
+  margin-top: 50px;
+  width: 55%;
+  min-width: 450px;
+}
+
+.main-container {
+  display: flex;
+}
+
+.our-price {
+  padding: 20px;
+  color: hsl(233, 13%, 49%);
+}
+.default-class {
+  width: 35%;
+  min-width: 150px;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 5px hsl(234, 14%, 74%);
+  margin-right: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
+}
+
+.default-class h6 {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 12px;
+  border-bottom: 1px solid hsl(232, 13%, 33%);
+  color: hsl(233, 13%, 49%);
+}
+
+.default-class h3 {
+  padding: 12px 0 5px;
+  font-size: 15px;
+  color: hsl(233, 13%, 49%);
+}
+.default-class h2 {
+  font-size: 2.2rem;
+  padding: 15px 0 20px;
+  text-align: center;
+  width: 100%;
+  color: hsl(232, 13%, 33%);
+  border-bottom: 1px solid hsl(232, 13%, 33%);
+}
+.default-class button {
+  height: 30px;
+}
+.default-class .dollar {
+  font-size: 22px;
+  position: relative;
+  bottom: 5px;
+  padding-right: 5px;
+}
+.price-class {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  padding-bottom: 15px;
+}
+.toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  color: hsl(234, 14%, 74%);
+}
+h3 {
+  text-align: center;
+}
+.default-class .btn-class {
+  background-color: white;
+  width: 100%;
+  border: 1px solid hsl(237, 63%, 64%);
+  border-radius: 5px;
+  height: 30px;
+  margin: 25px 0 0px;
+}
+
+.btn-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: hsl(237, 63%, 64%);
+  border-bottom: none;
+}
+
+ button:hover {
+  cursor: pointer;
+}
+
+.professional-class {
+  display: flex;
+  flex-shrink: 1;
+  transform: scale(1.1);
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border: none;
+}
+.professional-class > * {
+  transform: scale(0.875);
+  width: 90%;
+}
+.professional-class .price-class h3 {
+  padding: 10px;
+  color: white;
+  border-color: #fff;
+}
+
+.professional-class .btn-class {
+  margin: 28px 0 0;
+  background: none;
+  color: #fff;
+  border: 1px solid white;
+  transform: scale(1.05);
+}
+
+.professional-class .price-class h6 {
+  color: #fff;
+  border-color: white;
+  padding: 15px;
+}
+
+.professional-class .price-class h2 {
+  color: white;
+  border-color: #fff;
+  padding-bottom: 20px;
+}
+
+.monthly-class {
+  display: none;
+}
+
+.annual-class {
+  display: block;
+}
+
+.show-monthly .monthly-class {
+  display: block;
+}
+.show-monthly .annual-class {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body:before {
+    right: -30px;
+    top: -30px;
+    background-size: 230px;
+  }
+  body::after {
+    background-image: none;
+  }
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .default-class {
+    width: 230px;
+  }
+  .professional-class {
+    transform: scale(1);
+  }
+  .professional-class .price-class h2 {
+    font-size: 2.2rem;
+  }
+
+  .default-class .btn-class {
+    background: hsl(237, 63%, 64%);
+    color: #fff;
+    border: 1px solid white;
+    transform: scale(1.05);
+  }
+  .professional-class .btn-class {
+    background: #fff;
+    color: hsl(237, 63%, 64%);
+  }
+}
